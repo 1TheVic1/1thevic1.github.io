@@ -361,9 +361,7 @@ nav #icon {
     }
 }
 
-/*Div Page Full Screen*/
-
-.SBackground{ 
+.SBackground {
     --angle: 0deg;
     width: 90%;
     height: 750px;
@@ -371,16 +369,120 @@ nav #icon {
     left: 4%;
     top: 15%;
     border: 1rem solid;
-    /*border-color: #62ff00 ;*/
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Enable vertical scroll if necessary */
 }
 
-
-
-.SBackground > div { 
-    background: #000 ;
+.SBackground > div {
+    background: #000;
     opacity: 0.8;
     height: 100%;
     width: 100%;
-    
+}
 
+.test {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row by default */
+    gap: 3rem; /* Gap between items */
+    justify-items: center; /* Center items horizontally */
+    position: relative;
+    height: 80%;
+    width: 100%;
+    top: 15rem;
+}
+
+/* Dota Button */
+
+.DotaDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+}
+
+.DotaDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+}
+
+.Dota {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+}
+
+.dota {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+}
+
+.DotaDiv:hover {
+    animation: rotatepos 1s linear infinite;
+}
+
+.DotaDiv:hover .Dota {
+    animation: rotateneg 1s linear infinite;
+}
+
+@keyframes rotateneg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotatepos {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .test {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+        gap: 2rem; /* Adjusted gap */
+    }
+}
+
+@media (max-width: 750px) {
+    .test {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row on phones */
+        gap: 1rem; /* Adjusted gap */
+        overflow-x: hidden; /* Hide horizontal overflow */
+        overflow-y: auto; /* Enable vertical scroll if necessary */
+        max-height: calc(100vh - 200px); /* Limit height to viewport height minus navigation */
+    }
+}
+
+/* Base styles */
+@keyframes circle {
+    0% {
+        transform: translateX(200%) translateY(-170%);
+    }
+    100% {
+        transform: translateX(-100%) translateY(70%);
+    }
 }

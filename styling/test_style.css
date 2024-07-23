@@ -1,0 +1,369 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 20px auto; /* Center the container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .social-item {
+    width: calc(33.33% - 20px); /* Three items per row by default for laptops and TVs */
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .social-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .social-item {
+      width: calc(50% - 20px); /* Two items per row on tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .social-item {
+      width: calc(100% - 20px); /* One item per row on phones */
+    }
+  }
+  
+  /* Twitch.tv Button */
+  .TwitchDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .TwitchDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .Twitch {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .ttv {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .TwitchDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .TwitchDiv:hover .Twitch {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* Youtube Button */
+  .YoutubeDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .YoutubeDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .Youtube {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .ytb {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .YoutubeDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .YoutubeDiv:hover .Youtube {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* Discord Button */
+  .DiscordDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .DiscordDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .Discord {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .disc {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .DiscordDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .DiscordDiv:hover .Discord {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* TikTok Button */
+  .TikTokDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .TikTokDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .TikTok {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .tt {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .TikTokDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .TikTokDiv:hover .TikTok {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* Twitter Button */
+  .TwitterDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .TwitterDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .Twitter {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .ttr {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .TwitterDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .TwitterDiv:hover .Twitter {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* Instagram Button */
+  .InstagramDiv {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #62ff00, #000);
+    position: relative;
+    border-radius: 50%;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+  }
+  
+  .InstagramDiv:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    z-index: 6;
+    border-radius: 50%;
+  }
+  
+  .Instagram {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    border-radius: 50%;
+    z-index: 7;
+  }
+  
+  .ig {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .InstagramDiv:hover {
+    animation: rotatepos 1s linear infinite;
+  }
+  
+  .InstagramDiv:hover .Instagram {
+    animation: rotateneg 1s linear infinite;
+  }
+  
+  /* Button Animation */
+  @keyframes rotatepos {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes rotateneg {
+    100% {
+      transform: rotate(-1turn);
+    }
+  }
+  
+  @keyframes circle {
+    0% {
+      transform: translateX(200%) translateY(-170%);
+    }
+    100% {
+      transform: translateX(-100%) translateY(70%);
+    }
+  }
+  
