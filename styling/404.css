@@ -1,0 +1,58 @@
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; /*rgb(106, 220, 255)*/
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background: #636363;
+}
+
+.logo {
+    font-size: 40px;
+    color: white;
+    padding:  0 100px;
+    line-height: 80px;
+    font-family: 'Batman';
+    
+}
+
+.logo.active,.logo:hover{
+    color: #62ff00;
+    transition: 0.5s;
+}
+
+nav ul{
+    float: right;
+    margin-right: 40px;
+    font-family: 'Batman';
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+    line-height: 80px;
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+a.active,a:hover {
+    color: #62ff00;
+    transition: 0.5s;
+}
+
+nav #icon {
+    color: white;
+    font-size: 40px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}

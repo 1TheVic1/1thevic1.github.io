@@ -438,7 +438,7 @@ nav #icon {
     animation: rotatepos 1s linear infinite;
 }
 
-.DotaDiv:hover .Dota {
+.DotaDiv:hover .Dota  {
     animation: rotateneg 1s linear infinite;
 }
 
