@@ -1,3 +1,16 @@
+* {
+    padding: 0 ;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+@font-face {
+    font-family: Batman;
+    src: url('/assets/fonts/batman_forever (1)/batmfa__.ttf') format('truetype');
+  }
+
 body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
