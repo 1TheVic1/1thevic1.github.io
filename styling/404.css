@@ -17,6 +17,102 @@ body {
     background-color: #000; /*rgb(106, 220, 255)*/
 }
 
+#box-shadow-div{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 300vmax;
+    height: 300vmax;
+    border-radius: 100%;
+    background: radial-gradient(#fff -10%, #62ff00, #000 70%);
+    z-index: -2;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulseCircle 6s ease-in-out infinite;
+}
+
+@keyframes pulseCircle {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    33.33% { transform: translate(-50%, -50%) scale(1); }
+    66.67% { transform: translate(-50%, -50%) scale(0); }
+    100% { transform: translate(-50%, -50%) scale(0); }
+}
+
+.waves1{
+    visibility: hidden;
+}
+
+.waves2{
+    visibility: hidden;
+}
+
+@media (max-width: 1248px){
+    .waves {
+        visibility: hidden;
+    }
+
+    .waves1{
+        visibility: visible;
+    }
+}
+
+@media (max-width: 400px){
+    .waves2{
+        visibility: visible;
+    }
+
+    .waves1{
+        visibility: hidden;
+    }
+}
+
+.middleName {
+    position: fixed;
+    top: calc(50% + 40px); /* centered in the viewport area below the 80px nav */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 90%;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.title h2 .num {
+    display: block;
+    text-align: center;
+}
+
+.title h2 {
+    font-family: "Batman";
+    font-style: normal;
+    font-size: 68px;
+    line-height: 78px;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-text-stroke-width : 1px ;
+    -webkit-text-stroke-color : #000 ;
+}
+
+h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.title span {
+    width: 100%;
+    float: left;
+    color: #62ff00;
+    justify-content: center;
+}
+
 nav {
     height: 80px;
     width: 100%;
@@ -68,4 +164,41 @@ nav #icon {
     margin-right: 40px;
     cursor: pointer;
     display: none;
+}
+
+@media (max-width: 909px){
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a{
+        font-size: 20px;
+    }
+    a.active,a:hover {
+        border: none;
+        color: #62ff00;
+    }
+    nav ul.show {
+        left: 0;
+        z-index: 3;
+    }
+
+    label.logo{
+        font-size: 32px;
+        padding-left: 60px;
+    }
 }

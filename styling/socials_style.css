@@ -143,21 +143,31 @@ nav #icon {
 
 .SBackground {
     --angle: 0deg;
-    width: 90%;
-    height: 750px;
+    box-sizing: border-box; /* keeps the 1rem border inside the declared width instead of adding to it */
+    width: 94%;
     position: absolute;
-    left: 4%;
+    left: 3%;
     top: 15%;
     border: 1rem solid;
     overflow-x: hidden; /* Hide horizontal overflow */
     overflow-y: auto; /* Enable vertical scroll if necessary */
+    max-height: 80vh; /* safety cap so it can still scroll on very short screens */
+    display: flex;
+    align-items: center; /* centers the icon grid vertically so top/bottom space matches */
 }
 
-.SBackground > div {
+@media (min-width: 1649px) {
+    .SBackground {
+        min-height: 750px; /* restores the original visual size on desktop only; grows if content ever needs more */
+    }
+}
+
+.SBackground > .SDiv2 {
     background: #000;
     opacity: 0.8;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    inset: 0; /* fills the box regardless of the box's own height being auto */
+    z-index: 0;
 }
 
 .test {
@@ -166,9 +176,9 @@ nav #icon {
     gap: 3rem; /* Gap between items */
     justify-items: center; /* Center items horizontally */
     position: relative;
-    height: 80%;
     width: 100%;
-    top: 15rem;
+    padding: 2rem 0;
+    z-index: 1;
 }
 
 /* Twitch.tv Button */
@@ -534,6 +544,10 @@ nav #icon {
     #box-shadow-div {
         display: none;
     }
+    .SBackground {
+        width: 88%;
+        left: 6%;
+    }
 }
 
 /* Large Mobile (max-width: 1248px) */
@@ -551,10 +565,20 @@ nav #icon {
     .waves1 {
         visibility: visible;
     }
+
+    .SBackground {
+        width: 85%;
+        left: 7.5%;
+    }
 }
 
 /* Medium Mobile (max-width: 1048px) */
 @media (max-width: 1048px) {
+    .SBackground {
+        width: 82%;
+        left: 9%;
+    }
+
     .circle {
         position: fixed;
         width: 1200px;
@@ -596,6 +620,11 @@ nav #icon {
 
 /* Small Mobile (max-width: 909px) */
 @media (max-width: 909px) {
+    .SBackground {
+        width: 92%;
+        left: 4%;
+    }
+
     nav #icon {
         display: block;
     }

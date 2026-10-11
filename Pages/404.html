@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/styling/404.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="/scripts/menu_script.js"></script>
 </head>
 <body>
+    <div id="box-shadow-div"></div>
+
     <nav>
         <label class="logo">TheVic_1</label>
         <ul>
             <li><a href="/index.html">Home</a></li>
-            <li><a href="/Pages/Games.html" onclick="this.href='/Pages/404.html'">Games</a></li> <!--<li><a href="/Pages/Games.html">Games</a></li> -->
+            <li><a href="/Pages/Games.html">Games</a></li>
             <li><a href="/Pages/About.html" onclick="this.href='/Pages/404.html'">About</a></li> <!--<li><a href="/Pages/About.html">About</a></li>-->
             <!--<li><a href="https://victor-developer-portfolio.netlify.app/">Portfolio</a></li>
             <li><a href="/Pages/Merch.html">Merch</a></li>-->
@@ -22,6 +27,18 @@
             <i class="material-icons">menu</i>
         </label>
     </nav>
-    <img src="/assets/xtra_imgs/ChatGPT Image May 6, 2025, 10_53_32 PM.png">
+
+    <img class="waves" style="position: absolute; left:0; right:0;width:100%; top: 0; bottom: 0; height: 100%; z-index: -1;"
+        src="/assets/img/Background.png" alt="" />
+    <img class="waves1" style="position: absolute; left:0; right:0;width:100%; top: 0; bottom: 0; height: 100%; z-index: -1;"
+        src="/assets/img/BackgroundBigTab.png" alt="" />
+    <img class="waves2" style="position: absolute; left:0; right:0;width:100%; top: 0; bottom: 0; height: 100%; z-index: -1;"
+        src="/assets/img/BackgroundMobile.png" alt="" />
+
+    <div class="middleName">
+      <div class="title">
+          <h2><span class="num">404</span> <span>PAGE NOT FOUND</span></h2>
+      </div>
+    </div>
 </body>
 </html>

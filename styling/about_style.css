@@ -363,40 +363,66 @@ nav #icon {
 
 /*Div Page Full Screen*/
 
-.SBackground{ 
+.SBackground{
     --angle: 0deg;
+    box-sizing: border-box; /* keeps the 1rem border inside the declared width instead of adding to it */
     width: 90%;
-    height: 750px;
     position: absolute;
     left: 4%;
     top: 15%;
     border: 1rem solid;
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable vertical scroll if necessary */
+    max-height: 80vh; /* safety cap so it can still scroll on very short screens */
     /*border-color: #62ff00 ;*/
 }
 
-
-
-.SBackground > div { 
+.SBackground > .SDiv2 {
     background: #000 ;
     opacity: 0.8;
-    height: 100%;
-    width: 100%;
-    
+    position: absolute;
+    inset: 0; /* fills the box regardless of the box's own height being auto */
+    z-index: 0;
+}
 
+@media (max-width: 1648px) {
+    .SBackground {
+        width: 88%;
+        left: 6%;
+    }
+}
+
+@media (max-width: 1248px) {
+    .SBackground {
+        width: 85%;
+        left: 7.5%;
+    }
+}
+
+@media (max-width: 1048px) {
+    .SBackground {
+        width: 82%;
+        left: 9%;
+    }
+}
+
+@media (max-width: 909px) {
+    .SBackground {
+        width: 92%;
+        left: 4%;
+    }
 }
 
 /*About Page*/
 
 .AHeading{
-    position: absolute;
+    position: relative;
     background-color: #000;
     padding-left: 35%;
     padding-right: 32.75%;
-    left: 5%;
-    top: 15%;
-    z-index: 5;
-    
-    
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    z-index: 1;
 }
 
 .AHeading h1{
@@ -407,23 +433,19 @@ nav #icon {
     float: left;
     text-transform: uppercase;
     color: #fff;
-    -webkit-text-stroke-width : 1px ; 
-    -webkit-text-stroke-color : #000 ; 
-    
+    -webkit-text-stroke-width : 1px ;
+    -webkit-text-stroke-color : #000 ;
+
 
 }
 
 .atext{
-    position: absolute;
-    left: 5%;
-    top: 23%;
-    padding: 10px;
+    position: relative;
+    padding: 1.5rem;
     background-color: #000;
-    width: 90%;
-    height: 700px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
     text-align: justify;
     color: #fff;
-    
+    z-index: 1;
 }
