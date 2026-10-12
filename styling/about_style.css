@@ -370,7 +370,7 @@ nav #icon {
     position: absolute;
     left: 4%;
     top: 15%;
-    border: 1rem solid;
+    border: 1rem solid #000; /* explicit black: without a colour it follows the text colour, which phone dark modes turn grey. Revisit if a light mode is added */
     overflow-x: hidden;
     overflow-y: auto; /* Enable vertical scroll if necessary */
     max-height: 80vh; /* safety cap so it can still scroll on very short screens */

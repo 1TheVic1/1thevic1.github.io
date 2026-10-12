@@ -370,7 +370,7 @@ nav #icon {
     position: absolute;
     left: 4%;
     top: 15%;
-    border: 1rem solid;
+    border: 1rem solid #000; /* explicit black: without a colour it follows the text colour, which phone dark modes turn grey. Revisit if a light mode is added */
     /*border-color: #62ff00 ;*/
 }
 
