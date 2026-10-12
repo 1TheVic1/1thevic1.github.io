@@ -43,10 +43,34 @@
 
         <div class="wf-placeholder">
             <h1>Warframe</h1>
-            <p>Coming soon</p>
+        </div>
+
+        <div class="wf-dash">
+            <div class="wf-summary">
+                <div class="wf-rank">
+                    <span class="wf-label">Mastery Rank</span>
+                    <span class="wf-rank-num" id="wfRankNum">-</span>
+                    <span class="wf-rank-name" id="wfRankName"></span>
+                </div>
+                <div class="wf-donut">
+                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                        <circle class="wf-donut-track" cx="60" cy="60" r="50" />
+                        <circle class="wf-donut-fill" id="wfDonutFill" cx="60" cy="60" r="50" />
+                    </svg>
+                    <div class="wf-donut-centre">
+                        <span class="wf-donut-pct" id="wfTotalPct">-</span>
+                        <span class="wf-label">Total completion</span>
+                        <span class="wf-donut-count" id="wfTotalCount"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-cards" id="wfCards"></div>
+            <p class="wf-updated" id="wfUpdated"></p>
         </div>
 
     </div>
+    <script src="/scripts/warframe_data.js"></script>
+    <script src="/scripts/warframe_page.js"></script>
 
 </body>
 </html>

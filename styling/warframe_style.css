@@ -1,9 +1,30 @@
-/* Warframe placeholder page. Loads after games_style.css, which supplies the nav, backgrounds and bordered box. */
+/* Warframe page. Loads after games_style.css, which supplies the nav, backgrounds and bordered box. */
+
+/* Box still scrolls when content is taller than it, but without a visible scrollbar, same as the Socials page */
+.SBackground {
+    scrollbar-width: none;
+    background: rgba(0, 0, 0, 0.8); /* replaces the .SDiv2 overlay: an absolute overlay scrolls away with the content, a box background stays put */
+}
+
+.SBackground > .SDiv2 {
+    display: none;
+}
+
+/* games_style.css gives wide screens min-height 750px, which beats max-height 80vh and pushes the box off short screens */
+@media (min-width: 1649px) {
+    .SBackground {
+        min-height: min(750px, 80vh);
+    }
+}
+
+.SBackground::-webkit-scrollbar {
+    display: none;
+}
 
 .wf-placeholder {
     position: relative;
     z-index: 1;
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem 0;
     text-align: center;
 }
 
@@ -17,15 +38,187 @@
     -webkit-text-stroke-color: #000;
 }
 
-.wf-placeholder p {
-    margin-top: 1rem;
-    font-size: 20px;
+/* Mastery dashboard */
+.wf-dash {
+    position: relative;
+    z-index: 1;
+    padding: 1rem 2.5rem 1rem;
     color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wf-label {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #bbb;
+}
+
+.wf-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.wf-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid #62ff00;
+    background: #000;
+}
+
+.wf-rank-num {
+    font-family: "Batman";
+    font-size: 56px;
+    line-height: 64px;
+    color: #62ff00;
+    white-space: nowrap;
+}
+
+.wf-rank-name {
+    font-size: 18px;
+    color: #fff;
+}
+
+.wf-donut {
+    position: relative;
+    width: 200px;
+    max-width: 100%;
+    aspect-ratio: 1;
+}
+
+.wf-donut svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* start the arc at 12 o'clock */
+}
+
+.wf-donut circle {
+    fill: none;
+    stroke-width: 12;
+}
+
+.wf-donut-track {
+    stroke: #222;
+}
+
+.wf-donut-fill {
+    stroke: #62ff00;
+    stroke-linecap: round;
+    stroke-dasharray: 314.16; /* circumference of r=50: starts empty, the script then fills it to the completion % */
+    stroke-dashoffset: 314.16;
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.wf-donut-centre {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wf-donut-pct {
+    font-size: 40px;
+    font-weight: 700;
+    color: #62ff00;
+    font-variant-numeric: tabular-nums;
+}
+
+.wf-donut-count {
+    margin-top: 0.25rem;
+    font-size: 14px;
+    color: #ddd;
+    font-variant-numeric: tabular-nums;
+}
+
+.wf-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.wf-card {
+    border: 2px solid #62ff00;
+    background: #000;
+}
+
+.wf-card-head {
+    padding: 0.4rem 0.75rem;
+    background: #62ff00;
+    color: #000;
+    font-weight: 700;
+}
+
+.wf-card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0.75rem;
+    border-top: 1px solid #62ff0055;
+    font-variant-numeric: tabular-nums;
+}
+
+.wf-card-bar {
+    height: 6px;
+    background: #222;
+}
+
+.wf-card-bar span {
+    display: block;
+    height: 100%;
+    background: #62ff00;
+}
+
+.wf-updated {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+@media (max-width: 1048px) {
+    .wf-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 505px) {
     .wf-placeholder h1 {
         font-size: 40px;
         line-height: 48px;
+    }
+
+    .wf-dash {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .wf-rank {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .wf-rank-num {
+        font-size: 44px;
+        line-height: 52px;
+    }
+
+    .wf-summary {
+        gap: 1.5rem;
+    }
+
+    .wf-donut {
+        width: 180px;
+    }
+
+    .wf-cards {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 }
