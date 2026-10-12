@@ -195,6 +195,31 @@ nav #icon {
     }
 }
 
+/* Page heading, same look as the Warframe page heading */
+.dota-title {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem 0;
+    text-align: center;
+}
+
+.dota-title h1 {
+    font-family: "Batman";
+    font-size: 68px;
+    line-height: 78px;
+    text-transform: uppercase;
+    color: #62ff00;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+@media (max-width: 505px) {
+    .dota-title h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
 .dota-profile {
     position: relative;
     z-index: 1;
