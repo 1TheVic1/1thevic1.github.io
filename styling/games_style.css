@@ -429,7 +429,7 @@ nav #icon {
 
 /* Dota Button */
 
-.DotaDiv {
+.DotaDiv, .WarframeDiv {
     height: 200px;
     width: 200px;
     background: linear-gradient(to right, #62ff00, #000);
@@ -440,7 +440,7 @@ nav #icon {
     place-items: center;
 }
 
-.DotaDiv:before {
+.DotaDiv:before, .WarframeDiv:before {
     content: "";
     position: absolute;
     left: 10px;
@@ -452,7 +452,7 @@ nav #icon {
     border-radius: 50%;
 }
 
-.Dota {
+.Dota, .Warframe {
     position: absolute;
     width: 150px;
     height: 150px;
@@ -461,7 +461,7 @@ nav #icon {
     z-index: 7;
 }
 
-.dota {
+.dota, .warframe {
     width: 12.5rem;
     height: 12.5rem;
     position: absolute;
@@ -470,11 +470,11 @@ nav #icon {
     z-index: 8;
 }
 
-.DotaDiv:hover {
+.DotaDiv:hover, .WarframeDiv:hover {
     animation: rotatepos 1s linear infinite;
 }
 
-.DotaDiv:hover .Dota  {
+.DotaDiv:hover .Dota, .WarframeDiv:hover .Warframe {
     animation: rotateneg 1s linear infinite;
 }
 

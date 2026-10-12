@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <!-- Placeholder Warframe icon. Swap for a real image later. -->
+  <circle cx="75" cy="75" r="75" fill="#000"/>
+  <text x="75" y="75" text-anchor="middle" dominant-baseline="central" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="64" fill="#62ff00">WF</text>
+</svg>

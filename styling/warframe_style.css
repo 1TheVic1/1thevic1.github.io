@@ -1,0 +1,31 @@
+/* Warframe placeholder page. Loads after games_style.css, which supplies the nav, backgrounds and bordered box. */
+
+.wf-placeholder {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.wf-placeholder h1 {
+    font-family: "Batman";
+    font-size: 68px;
+    line-height: 78px;
+    text-transform: uppercase;
+    color: #62ff00;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.wf-placeholder p {
+    margin-top: 1rem;
+    font-size: 20px;
+    color: #fff;
+}
+
+@media (max-width: 505px) {
+    .wf-placeholder h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
