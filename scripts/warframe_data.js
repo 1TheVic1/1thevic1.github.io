@@ -6,33 +6,42 @@ window.WF_DATA = {
         {
             "name": "Warframes",
             "total": 120,
-            "mastered": 0
+            "mastered": 116
         },
         {
             "name": "Primaries",
             "total": 197,
-            "mastered": 0
+            "mastered": 177
         },
         {
             "name": "Secondaries",
             "total": 149,
-            "mastered": 0
+            "mastered": 130
         },
         {
             "name": "Melee",
             "total": 235,
-            "mastered": 0
+            "mastered": 194
         },
         {
             "name": "Companions",
             "total": 39,
-            "mastered": 0
+            "mastered": 38
         },
         {
             "name": "Other",
             "total": 69,
-            "mastered": 0
+            "mastered": 52
         }
     ],
-    "updated": "2026-10-12"
+    "alecaframe": {
+        "date": "2026-08-24",
+        "masteryRank": 34,
+        "completion": 98,
+        "platinum": 9476,
+        "credits": 45687987,
+        "endo": 161061
+    },
+    "profileDate": "2026-10-13",
+    "updated": "2026-10-13"
 };

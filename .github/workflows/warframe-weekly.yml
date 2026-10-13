@@ -1,0 +1,57 @@
+# Weekly update of the Warframe page data (scripts/warframe_data.js).
+# Pulls AlecaFrame stats (MR, progress to next rank, Platinum, Credits, Endo) and the public
+# Warframe profile (XP per item -> mastered per category), then commits and republishes the site.
+# Secrets used: ALECAFRAME_PUBLIC_TOKEN, WARFRAME_ACCOUNT_ID (Settings > Secrets and variables > Actions).
+name: Warframe weekly update
+
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Mondays 04:00 UTC (06:00 South Africa)
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: warframe-weekly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Download WFCD item data
+        run: |
+          mkdir -p /tmp/wfcd
+          for f in Warframes Primary Secondary Melee Pets Sentinels Archwing Arch-Gun Arch-Melee SentinelWeapons Misc; do
+            curl -sSfL -o "/tmp/wfcd/$f.json" "https://raw.githubusercontent.com/WFCD/warframe-items/master/data/json/$f.json"
+          done
+
+      - name: Build page data (one AlecaFrame request, one Warframe profile request)
+        env:
+          ITEMS_DIR: /tmp/wfcd
+          ALECAFRAME_PUBLIC_TOKEN: ${{ secrets.ALECAFRAME_PUBLIC_TOKEN }}
+          WARFRAME_ACCOUNT_ID: ${{ secrets.WARFRAME_ACCOUNT_ID }}
+        run: node tools/build-warframe-data.js --profile
+
+      - name: Commit and republish the site if the data changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- scripts/warframe_data.js; then
+            echo "No change in Warframe data."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/warframe_data.js
+          git commit -m "Weekly Warframe data update"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request failed; the push may still republish the site."

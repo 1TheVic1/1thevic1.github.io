@@ -41,9 +41,21 @@
         cards.appendChild(card);
     });
 
-    var overall = pct(mastered, total);
+    // Overall completion: AlecaFrame's figure when available, otherwise the mastered count.
+    var af = data.alecaframe;
+    var overall = af && typeof af.completion === 'number' ? af.completion : pct(mastered, total);
     document.getElementById('wfTotalPct').textContent = fmt(overall);
     document.getElementById('wfTotalCount').textContent = mastered + ' / ' + total;
+
+    // Platinum, Credits, Endo from AlecaFrame (hidden if there's no AlecaFrame data)
+    var num = function (n) { return typeof n === 'number' ? n.toLocaleString('en-US') : '-'; };
+    if (af) {
+        document.getElementById('wfPlat').textContent = num(af.platinum);
+        document.getElementById('wfCredits').textContent = num(af.credits);
+        document.getElementById('wfEndo').textContent = num(af.endo);
+    } else {
+        document.getElementById('wfWallet').style.display = 'none';
+    }
 
     // Donut: circumference of r=50 drawn as a dash, filled to the overall %.
     var fill = document.getElementById('wfDonutFill');

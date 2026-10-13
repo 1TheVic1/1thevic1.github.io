@@ -126,6 +126,11 @@
     text-align: center;
 }
 
+/* "Total completion" label inside the ring: smaller than the other labels so it clears the ring */
+.wf-donut-centre .wf-label {
+    font-size: 10px;
+}
+
 .wf-donut-pct {
     font-size: 40px;
     font-weight: 700;
@@ -137,6 +142,37 @@
     margin-top: 0.25rem;
     font-size: 14px;
     color: #ddd;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Platinum, Credits, Endo (AlecaFrame) */
+.wf-wallet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.wf-currency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.5rem;
+    border: 2px solid #62ff00;
+    background: #000;
+}
+
+.wf-currency img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.wf-currency-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
     font-variant-numeric: tabular-nums;
 }
 
@@ -220,5 +256,22 @@
     .wf-cards {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+
+    .wf-wallet {
+        gap: 0.5rem;
+    }
+
+    .wf-currency img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .wf-currency-val {
+        font-size: 16px;
+    }
+
+    .wf-currency .wf-label {
+        font-size: 11px;
     }
 }
