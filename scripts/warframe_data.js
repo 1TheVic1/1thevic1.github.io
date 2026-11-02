@@ -20,7 +20,7 @@ window.WF_DATA = {
         },
         {
             "name": "Melee",
-            "total": 235,
+            "total": 236,
             "mastered": 194
         },
         {
@@ -30,7 +30,7 @@ window.WF_DATA = {
         },
         {
             "name": "Other",
-            "total": 69,
+            "total": 68,
             "mastered": 52
         }
     ],
@@ -43,5 +43,5 @@ window.WF_DATA = {
         "endo": 161061
     },
     "profileDate": "2026-10-13",
-    "updated": "2026-10-26"
+    "updated": "2026-11-02"
 };
